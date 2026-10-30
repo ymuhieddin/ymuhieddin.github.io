@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Page title and search-engine description -->
+  <title>Yazan Muhieddin | Finance Graduate &amp; Data Analyst</title>
+  <meta name="description" content="Portfolio of Yazan Muhieddin, a Salem State University finance graduate with a Google Data Analytics Professional Certificate. SQL, BigQuery, Excel, and Tableau projects.">
+  <meta name="author" content="Yazan Muhieddin">
+  <link rel="canonical" href="https://www.yazanmuhieddin.com/">
+
+  <!-- Social sharing (LinkedIn, Facebook, X/Twitter, iMessage previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.yazanmuhieddin.com/">
+  <meta property="og:title" content="Yazan Muhieddin | Finance Graduate &amp; Data Analyst">
+  <meta property="og:description" content="Finance graduate with a Google Data Analytics Professional Certificate. View my SQL, BigQuery, and Tableau projects.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Yazan Muhieddin | Finance Graduate &amp; Data Analyst">
+  <meta name="twitter:description" content="Finance graduate with a Google Data Analytics Professional Certificate. View my SQL, BigQuery, and Tableau projects.">
+
+  <!-- Browser tab icon (a simple navy "YM" monogram, no image file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1F3A'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='28' fill='%23ffffff'%3EYM%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts: Source Serif 4 for headings, Inter for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Colors and basics ===== */
+    :root {
+      --navy: #0B1F3A;
+      --navy-2: #12305A;
+      --ink: #1A2233;
+      --muted: #566173;
+      --line: #E3E7EE;
+      --soft: #F5F7FA;
+      --white: #FFFFFF;
+      --accent: #B8913A;      /* muted gold, used sparingly */
+      --accent-soft: #E9DDBF;
+      --link: #1F5FA8;
+      --radius: 12px;
+      --max: 1120px;
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body {
+      margin: 0; font-family: var(--sans); color: var(--ink); background: var(--white);
+      font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--link); }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; margin: 0; color: var(--navy); }
+    p { margin: 0 0 1em; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    .skip-link {
+      position: absolute; left: 16px; top: -60px; background: var(--white); color: var(--navy);
+      padding: 10px 16px; border-radius: 8px; z-index: 100; font-weight: 600; text-decoration: none;
+    }
+    .skip-link:focus { top: 12px; }
+
+    /* ===== Navigation bar ===== */
+    .nav {
+      position: sticky; top: 0; z-index: 50; background: rgba(11, 31, 58, 0.97);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .brand { color: var(--white); text-decoration: none; font-family: var(--serif); font-size: 20px; font-weight: 600; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { color: #C9D3E2; text-decoration: none; font-size: 15px; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-toggle {
+      display: none; background: none; border: 1px solid rgba(255,255,255,0.25); color: var(--white);
+      border-radius: 8px; padding: 8px 12px; font: inherit; font-size: 15px; cursor: pointer;
+    }
+
+    /* ===== Hero ===== */
+    .hero { background: var(--navy); color: var(--white); padding: 96px 0 104px; position: relative; overflow: hidden; }
+    .hero::after {
+      content: ""; position: absolute; right: -120px; top: -120px; width: 480px; height: 480px;
+      border: 1px solid rgba(184,145,58,0.25); border-radius: 50%; pointer-events: none;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; align-items: center; position: relative; z-index: 1; }
+    .eyebrow { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
+    .hero h1 { color: var(--white); font-size: clamp(42px, 6vw, 64px); margin-bottom: 14px; }
+    .headline { font-size: 19px; color: #DCE3EE; margin-bottom: 22px; font-weight: 500; }
+    .headline .sep { color: var(--accent); margin: 0 8px; }
+    .hero-intro { color: #B9C4D6; font-size: 17px; max-width: 560px; margin-bottom: 32px; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px;
+      font-weight: 600; font-size: 15px; text-decoration: none; transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      border: 1px solid transparent;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-light { background: var(--white); color: var(--navy); }
+    .btn-light:hover { background: #E8EDF5; }
+    .btn-ghost { border-color: rgba(255,255,255,0.35); color: var(--white); }
+    .btn-ghost:hover { border-color: var(--white); }
+    .btn-navy { background: var(--navy); color: var(--white); }
+    .btn-navy:hover { background: var(--navy-2); }
+    .btn-outline { border-color: var(--line); color: var(--navy); background: var(--white); }
+    .btn-outline:hover { border-color: var(--navy); }
+
+    .hero-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius); padding: 28px;
+    }
+    .hero-card .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #93A2B9; margin-bottom: 6px; }
+    .hero-card .big { font-family: var(--serif); font-size: 40px; color: var(--white); line-height: 1.1; }
+    .hero-card .sub { color: #B9C4D6; font-size: 14px; margin: 4px 0 20px; }
+    .hero-card hr { border: 0; border-top: 1px solid rgba(255,255,255,0.12); margin: 0 0 18px; }
+    .hero-card ul { list-style: none; margin: 0; padding: 0; font-size: 15px; color: #DCE3EE; }
+    .hero-card li { padding: 4px 0 4px 18px; position: relative; }
+    .hero-card li::before { content: ""; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    /* ===== Sections ===== */
+    section { padding: 88px 0; }
+    .alt { background: var(--soft); }
+    .section-head { margin-bottom: 40px; max-width: 680px; }
+    .section-kicker { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 10px; display: block; }
+    .section-head h2 { font-size: clamp(30px, 4vw, 40px); }
+    .section-head p { color: var(--muted); margin-top: 12px; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; align-items: start; }
+    .about-text p { color: #333D4F; }
+    .facts { border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 24px; background: var(--white); }
+    .fact { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+    .fact:last-child { border-bottom: 0; }
+    .fact dt { color: var(--muted); }
+    .fact dd { margin: 0; font-weight: 500; text-align: right; color: var(--navy); }
+
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .skill-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+    .skill-card h3 { font-size: 19px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 2px solid var(--accent-soft); }
+    .skill-card ul { list-style: none; margin: 0; padding: 0; font-size: 15px; color: #333D4F; }
+    .skill-card li { padding: 5px 0; }
+
+    /* Projects */
+    .featured {
+      display: grid; grid-template-columns: 1.25fr 1fr; border: 1px solid var(--line); border-radius: 16px;
+      overflow: hidden; background: var(--white); margin-bottom: 24px; box-shadow: 0 1px 2px rgba(11,31,58,0.04), 0 12px 32px rgba(11,31,58,0.06);
+    }
+    .featured-body { padding: 40px; }
+    .tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); background: var(--accent-soft); padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; }
+    .featured h3 { font-size: 30px; margin-bottom: 6px; }
+    .meta { color: var(--muted); font-size: 14px; margin-bottom: 18px; }
+    .featured-body > p { color: #333D4F; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 26px; padding: 0; list-style: none; }
+    .chips li { font-size: 13px; color: var(--navy); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; background: var(--white); }
+    .featured-stats { background: var(--navy); color: var(--white); padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px 24px; align-content: center; }
+    .stat .num { font-family: var(--serif); font-size: 34px; line-height: 1.1; }
+    .stat .num small { font-size: 18px; color: #B9C4D6; }
+    .stat .desc { font-size: 14px; color: #B9C4D6; margin-top: 6px; }
+    .featured-stats .stat-note { grid-column: 1 / -1; font-size: 13px; color: #8FA0B8; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 16px; }
+
+    .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .project { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; display: flex; flex-direction: column; }
+    .project h3 { font-size: 23px; margin-bottom: 6px; }
+    .project p { color: #333D4F; font-size: 16px; }
+    .project ul.points { margin: 0 0 8px; padding-left: 20px; color: #333D4F; font-size: 16px; }
+    .project ul.points li { margin-bottom: 6px; }
+    .project .chips { margin: auto 0 0; padding-top: 16px; }
+
+    /* Experience & Education */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .entry { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; }
+    .entry-top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 4px; }
+    .entry h3 { font-size: 22px; }
+    .date { font-size: 14px; color: var(--muted); white-space: nowrap; padding-top: 4px; }
+    .entry .org { font-weight: 500; color: var(--navy-2); margin-bottom: 16px; }
+    .entry ul { margin: 0; padding-left: 20px; color: #333D4F; font-size: 16px; }
+    .entry li { margin-bottom: 8px; }
+    .coursework-label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; margin: 4px 0 10px; }
+
+    /* Certifications */
+    .cert-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .cert { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--navy); border-radius: var(--radius); padding: 26px; }
+    .cert.sim { border-top-color: var(--accent); }
+    .cert .issuer { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+    .cert h3 { font-size: 19px; margin-bottom: 10px; }
+    .cert .when { font-size: 14px; color: var(--muted); }
+    .cert .note { font-size: 13px; color: var(--muted); margin-top: 10px; font-style: italic; }
+    .badge { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 4px; margin-bottom: 10px; background: var(--soft); color: var(--navy); border: 1px solid var(--line); }
+
+    /* Resume band */
+    .resume-band { background: var(--navy); color: var(--white); padding: 64px 0; }
+    .resume-band .container { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+    .resume-band h2 { color: var(--white); font-size: 32px; margin-bottom: 8px; }
+    .resume-band p { color: #B9C4D6; margin: 0; }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .contact-card {
+      display: block; text-decoration: none; background: var(--white); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 28px; transition: border-color .15s ease, transform .15s ease;
+    }
+    .contact-card:hover { border-color: var(--navy); transform: translateY(-2px); }
+    .contact-card .k { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; }
+    .contact-card .v { font-family: var(--serif); font-size: 20px; color: var(--navy); margin-top: 6px; word-break: break-word; }
+    .contact-card .go { font-size: 14px; color: var(--link); margin-top: 14px; font-weight: 500; }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 14px; color: var(--muted); }
+    footer .container { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); text-decoration: none; margin-left: 18px; }
+    footer a:hover { color: var(--navy); }
+
+    /* ===== Subtle reveal-on-scroll animation ===== */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .btn, .contact-card { transition: none; }
+    }
+    .no-js .reveal { opacity: 1; transform: none; }
+
+    /* ===== Tablet ===== */
+    @media (max-width: 980px) {
+      .hero-grid, .about-grid, .featured { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .cert-list, .contact-grid { grid-template-columns: 1fr 1fr; }
+    }
+    /* ===== Mobile ===== */
+    @media (max-width: 720px) {
+      body { font-size: 16px; }
+      section { padding: 64px 0; }
+      .hero { padding: 64px 0 72px; }
+      .nav-toggle { display: inline-block; }
+      .nav-links {
+        display: none; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; gap: 0;
+        background: var(--navy); padding: 8px 24px 16px; border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 12px 0; font-size: 16px; }
+      .skills-grid, .project-grid, .two-col, .cert-list, .contact-grid { grid-template-columns: 1fr; }
+      .featured-body, .featured-stats { padding: 28px; }
+      .btn { width: 100%; justify-content: center; }
+      footer a { margin: 0 18px 0 0; }
+    }
+  </style>
+</head>
+<body class="no-js">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav">
+    <nav class="container" aria-label="Main">
+      <a class="brand" href="#home">Yazan Muhieddin<span>.</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home" aria-labelledby="hero-name">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Entry-level analyst · Greater Boston</p>
+          <h1 id="hero-name">Yazan Muhieddin</h1>
+          <p class="headline">Finance Graduate<span class="sep" aria-hidden="true">|</span>Data Analytics<span class="sep" aria-hidden="true">|</span>Business Intelligence</p>
+          <p class="hero-intro">I'm a finance graduate from Salem State University with a Google Data Analytics Professional Certificate. I use SQL, Excel, and Tableau to clean and analyze data, then turn the results into clear insights that support business decisions.</p>
+          <div class="btn-row">
+            <a class="btn btn-light" href="#projects">View My Projects</a>
+            <a class="btn btn-ghost" href="Yazan_Muhieddin_Resume.pdf" download>Download Resume</a>
+            <a class="btn btn-ghost" href="#contact">Contact Me</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Highlights">
+          <p class="label">Featured analysis</p>
+          <p class="big">1,430,076</p>
+          <p class="sub">bike-share trip records cleaned and analyzed in SQL</p>
+          <hr>
+          <p class="label">Open to roles as</p>
+          <ul>
+            <li>Data Analyst</li>
+            <li>Financial Analyst</li>
+            <li>Business Analyst</li>
+            <li>Reporting / BI Analyst</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-text reveal">
+          <span class="section-kicker">About me</span>
+          <h2 id="about-title" style="font-size:clamp(30px,4vw,40px); margin-bottom:24px;">Finance foundation, analytical toolkit</h2>
+          <p>I graduated from Salem State University in May 2026 with a BBA in Business Administration, concentrating in Finance. Courses like Corporate Finance and Advanced Financial Analysis taught me how to read financial statements, work with ratios, and judge how a business is performing.</p>
+          <p>In October 2026 I completed the Google Data Analytics Professional Certificate, where I built hands-on skills in SQL, spreadsheets, and Tableau. For my capstone, I cleaned and analyzed more than 1.4 million bike-share trips in Google BigQuery and turned the findings into a dashboard and marketing recommendations.</p>
+          <p>I'm interested in roles where data informs real decisions: explaining what the numbers show, where they fall short, and what a team might do next. Since 2022 I've also worked in retail sales, which keeps me practiced at listening to people and explaining things clearly.</p>
+        </div>
+        <dl class="facts reveal" aria-label="Quick facts">
+          <div class="fact"><dt>Degree</dt><dd>BBA, Finance · 2026</dd></div>
+          <div class="fact"><dt>Certificate</dt><dd>Google Data Analytics</dd></div>
+          <div class="fact"><dt>Location</dt><dd>Wakefield, MA</dd></div>
+          <div class="fact"><dt>Languages</dt><dd>English, Arabic</dd></div>
+          <div class="fact"><dt>Core tools</dt><dd>SQL · Excel · Tableau</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="alt" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Skills</span>
+          <h2 id="skills-title">What I work with</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card reveal">
+            <h3>Data Analysis</h3>
+            <ul>
+              <li>SQL (Google BigQuery)</li>
+              <li>Microsoft Excel</li>
+              <li>Google Sheets</li>
+              <li>Data cleaning &amp; validation</li>
+              <li>Pivot tables</li>
+            </ul>
+          </div>
+          <div class="skill-card reveal">
+            <h3>Visualization &amp; Reporting</h3>
+            <ul>
+              <li>Tableau</li>
+              <li>Dashboard creation</li>
+              <li>Data visualization</li>
+              <li>Data reporting</li>
+            </ul>
+          </div>
+          <div class="skill-card reveal">
+            <h3>Finance &amp; Business</h3>
+            <ul>
+              <li>Financial statement analysis</li>
+              <li>Financial ratio analysis</li>
+              <li>Investment analysis</li>
+              <li>Business research &amp; analysis</li>
+            </ul>
+          </div>
+          <div class="skill-card reveal">
+            <h3>Professional</h3>
+            <ul>
+              <li>Communication</li>
+              <li>Teamwork</li>
+              <li>Problem-solving &amp; critical thinking</li>
+              <li>Customer service &amp; sales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Projects</span>
+          <h2 id="projects-title">Featured work</h2>
+          <p>One public data analytics project, plus two academic finance projects from Salem State.</p>
+        </div>
+
+        <!-- Featured project: Cyclistic -->
+        <article class="featured reveal" aria-labelledby="cyclistic-title">
+          <div class="featured-body">
+            <span class="tag">Featured · Data analytics</span>
+            <h3 id="cyclistic-title">Cyclistic Bike-Share Analysis</h3>
+            <p class="meta">Google Data Analytics capstone · Divvy trip data, January–May 2025</p>
+            <p>How do casual riders and annual members use bike-share differently? I cleaned and analyzed 1,430,076 trip records in Google BigQuery, comparing ride duration, weekday activity, monthly trends, and hourly patterns. I then built an interactive Tableau dashboard with four visualizations and wrote marketing recommendations for converting casual riders into members.</p>
+            <ul class="chips" aria-label="Tools used">
+              <li>SQL</li><li>Google BigQuery</li><li>Google Sheets</li><li>Tableau</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-navy" href="https://public.tableau.com/views/CyclisticBike-ShareAnalysisJanuaryMay2025/Dashboard1" target="_blank" rel="noopener">View Tableau Dashboard</a>
+              <a class="btn btn-outline" href="https://github.com/ymuhieddin/Cyclitic-Bike-Share-Analysis-" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+          <div class="featured-stats" aria-label="Key findings">
+            <div class="stat"><div class="num">1.43M</div><div class="desc">cleaned trip records</div></div>
+            <div class="stat"><div class="num">71%</div><div class="desc">of rides taken by annual members</div></div>
+            <div class="stat"><div class="num">22.25 <small>min</small></div><div class="desc">average casual ride</div></div>
+            <div class="stat"><div class="num">11.44 <small>min</small></div><div class="desc">average member ride</div></div>
+            <p class="stat-note">Members rode most on weekdays at commuting hours; casual riders peaked on Saturdays.</p>
+          </div>
+        </article>
+
+        <!-- Academic projects -->
+        <div class="project-grid">
+          <article class="project reveal" aria-labelledby="realestate-title">
+            <span class="tag">Academic · Salem State</span>
+            <h3 id="realestate-title">Real Estate Spreadsheet Analysis</h3>
+            <p class="meta">Coursework project</p>
+            <ul class="points">
+              <li>Built and organized an Excel spreadsheet to perform the calculations for a real estate coursework analysis.</li>
+              <li>Designed a clean, well-formatted layout so the calculations and results were easy to follow.</li>
+            </ul>
+            <ul class="chips" aria-label="Tools used"><li>Microsoft Excel</li></ul>
+          </article>
+
+          <article class="project reveal" aria-labelledby="equity-title">
+            <span class="tag">Academic · Salem State</span>
+            <h3 id="equity-title">Equity Investment Analysis &amp; Stock Pitch</h3>
+            <p class="meta">Finance coursework project</p>
+            <ul class="points">
+              <li>Analyzed a publicly traded company's financial statements, ratios, historical performance, and competitive position.</li>
+              <li>Weighed growth opportunities against financial risks to support an investment recommendation.</li>
+              <li>Presented the findings and recommendation to an investor-oriented audience.</li>
+            </ul>
+            <ul class="chips" aria-label="Focus areas">
+              <li>Financial statements</li><li>Ratio analysis</li><li>Investment pitch</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE & EDUCATION ============ -->
+    <section id="experience" class="alt" aria-labelledby="exp-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Experience &amp; Education</span>
+          <h2 id="exp-title">Background</h2>
+        </div>
+        <div class="two-col">
+          <article class="entry reveal" aria-labelledby="job-title">
+            <div class="entry-top">
+              <h3 id="job-title">Sales Associate</h3>
+              <span class="date">May 2022 – Present</span>
+            </div>
+            <p class="org">Marshalls &amp; HomeGoods · Saugus, MA</p>
+            <ul>
+              <li>Help customers find products and answer their questions with friendly, efficient service.</li>
+              <li>Promote TJX Rewards credit cards by explaining program benefits and encouraging eligible customers to apply.</li>
+              <li>Work with teammates to keep displays organized and shelves stocked, supporting daily sales.</li>
+            </ul>
+          </article>
+          <article class="entry reveal" aria-labelledby="edu-title" id="education">
+            <div class="entry-top">
+              <h3 id="edu-title">Salem State University</h3>
+              <span class="date">May 2026</span>
+            </div>
+            <p class="org">BBA in Business Administration — Finance · Salem, MA</p>
+            <p class="coursework-label">Relevant coursework</p>
+            <ul class="chips" style="margin:0">
+              <li>Corporate Finance</li><li>Financial Planning</li><li>International Finance</li>
+              <li>Advanced Financial Analysis</li><li>Operations &amp; Logistics Management</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section id="certifications" aria-labelledby="cert-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Certifications &amp; Development</span>
+          <h2 id="cert-title">Credentials</h2>
+        </div>
+        <div class="cert-list">
+          <div class="cert reveal">
+            <span class="badge">Certificate</span>
+            <p class="issuer">Google</p>
+            <h3>Google Data Analytics Professional Certificate</h3>
+            <p class="when">October 2026</p>
+          </div>
+          <div class="cert reveal">
+            <span class="badge">Certificate</span>
+            <p class="issuer">Bloomberg</p>
+            <h3>Bloomberg Market Concepts (BMC)</h3>
+            <p class="when">October 2025</p>
+          </div>
+          <div class="cert sim reveal">
+            <span class="badge">Job simulation</span>
+            <p class="issuer">Forage</p>
+            <h3>Fidelity International Investment Management Job Simulation</h3>
+            <p class="when">May 2026</p>
+            <p class="note">A virtual job simulation completed through Forage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESUME ============ -->
+    <section class="resume-band" id="resume" aria-labelledby="resume-title">
+      <div class="container">
+        <div>
+          <h2 id="resume-title">Resume</h2>
+          <p>A one-page summary of my education, skills, projects, and experience.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-light" href="Yazan_Muhieddin_Resume.pdf" download>Download Resume (PDF)</a>
+          <a class="btn btn-ghost" href="Yazan_Muhieddin_Resume.pdf" target="_blank" rel="noopener">View in Browser</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Contact</span>
+          <h2 id="contact-title">Let's talk</h2>
+          <p>I'm looking for entry-level data, financial, business, and reporting analyst roles. The best way to reach me is by email.</p>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card reveal" href="mailto:ymuhieddin@gmail.com">
+            <div class="k">Email</div>
+            <div class="v">ymuhieddin@gmail.com</div>
+            <div class="go">Send an email →</div>
+          </a>
+          <a class="contact-card reveal" href="https://www.linkedin.com/in/yazan-muhieddin-16013430b" target="_blank" rel="noopener">
+            <div class="k">LinkedIn</div>
+            <div class="v">Yazan Muhieddin</div>
+            <div class="go">View profile →</div>
+          </a>
+          <a class="contact-card reveal" href="https://github.com/ymuhieddin" target="_blank" rel="noopener">
+            <div class="k">GitHub</div>
+            <div class="v">ymuhieddin</div>
+            <div class="go">See my code →</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© <span id="year">2026</span> Yazan Muhieddin</span>
+      <span>
+        <a href="mailto:ymuhieddin@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/yazan-muhieddin-16013430b" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/ymuhieddin" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    // Turn on animations only when JavaScript is running
+    document.body.classList.remove('no-js');
+
+    // Mobile menu open/close
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.textContent = open ? 'Close' : 'Menu';
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Menu';
+    }));
+
+    // Fade sections in as they scroll into view
+    const items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    } else {
+      items.forEach(el => el.classList.add('visible'));
+    }
+
+    // Highlight the current section in the menu
+    const navLinks = [...links.querySelectorAll('a')];
+    const sections = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+    window.addEventListener('scroll', () => {
+      let current = null;
+      sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top <= 120) current = i; });
+      navLinks.forEach((a, i) => a.classList.toggle('active', i === current));
+    }, { passive: true });
+
+    // Keep the copyright year current
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
